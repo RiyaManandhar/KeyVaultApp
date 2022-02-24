@@ -42,9 +42,11 @@ const LoginScreen = ({navigation}) => {
                 <Text style={styles.loginText}>LOGIN</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.finger}>
+              <Image  source={require('../assets/Images/fingerprint.png')} style={styles.fingerprint} />
                 <Text style={styles.tapFinger}>
-                  Tap to Login with fingerprint</Text>
+                 Tap to Login with fingerprint
+                  </Text>
               </TouchableOpacity>
 
               <TouchableOpacity>
@@ -63,6 +65,10 @@ const LoginScreen = ({navigation}) => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  finger:{
+    display:'flex',
+    flexDirection:'row',
+  },
   BgImgStyle: {
       height: '100%',
       width: '100%',
@@ -91,6 +97,13 @@ const styles = StyleSheet.create({
       marginLeft: 20,
       color: 'black'
       
+    },
+    fingerprint:{
+      height:30,
+      width:30,
+      marginTop:'5%',
+      marginRight:'-3%'
+
     },
     tapFinger: {
       color:'black',
