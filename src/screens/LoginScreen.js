@@ -1,22 +1,16 @@
 import React, {useState} from 'react'
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    TextInput,
-    TouchableOpacity,
-    ImageBackground,
-  } from "react-native";
+import { StyleSheet,Text, View, Image, TextInput,TouchableOpacity,ImageBackground } from "react-native";
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
         return ( 
-            <ImageBackground style={styles.BgImgStyle} 
-            source={require('../assets/Images/BgImage.jpg')}>
+          <ImageBackground style={styles.BgImgStyle} 
+                    source={require('../assets/Images/BgImage.jpg')}>
+
               <Image style={styles.WelcomeLogo} source={require('../assets/Images/logo.png')} />
+
               <View style={styles.inputView}>
                 <TextInput
                   style={styles.TextInput}
@@ -39,7 +33,7 @@ const LoginScreen = ({navigation}) => {
               </View>
          
               <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('HomeScreen')}>
-                <Text style={styles.loginText}>LOGIN</Text>
+                <Text style={styles.buttonText}>LOGIN</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.finger}>
@@ -65,6 +59,7 @@ const LoginScreen = ({navigation}) => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  
   finger:{
     display:'flex',
     flexDirection:'row',
@@ -78,26 +73,21 @@ const styles = StyleSheet.create({
     image: {
       marginBottom: 40,
     },
-    loginText:{
+    buttonText:{
       color:'white',
+      fontWeight: '700',
     },
     inputView: {
-      borderRadius: 30,
       width: "80%",
-      height: 45,
-      marginBottom: 20,
-      backgroundColor:'rgba(255, 255,255,0.4)',
-      alignItems: "center",
     },
-   
-    TextInput: {
-      height: 50,
-      flex: 1,
-      padding: 10,
-      marginLeft: 20,
-      color: 'black'
-      
-    },
+   TextInput:{
+    backgroundColor:'rgba(255, 255,255,0.4)',
+    textAlign:'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 30,
+    margin: 5,
+   },
     fingerprint:{
       height:30,
       width:30,
