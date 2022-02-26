@@ -1,28 +1,16 @@
 import React, {useState} from 'react'
-import {Text, View, Image, TextInput,TouchableOpacity,ImageBackground } from "react-native";
+import {Text, Image,TouchableOpacity,ImageBackground } from "react-native";
+import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
 import styles from "../../Styles/styles";
 
 
-const LoginScreen = ({props}) => {
+const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
 
-     /**
-     * Listener method create new account - Go to the Registration Screen.
-     */
-      const onCreateNewAccountPress = () => {
-        props.navigation.navigate('Registration')
-    }
-
-    /**
-     * Listner method for Forgot Password - Go to the Forgot Password Screen.
-     */
-    const onForgotPasswordPress = () => {
-        props.navigation.navigate('ForgotPassword')
-    }
 
         return ( 
           <ImageBackground style={styles.bgImgStyle} 
@@ -31,21 +19,18 @@ const LoginScreen = ({props}) => {
               <Image style={styles.loginLogo} 
                     source={require('../../assets/Images/logo.png')} />
 
-              <View style={styles.inputView}>
+             
                 <TextBoxInput placeholder={'Email Address'} 
                             textSetter={setEmail} 
                             value={email}/>
-              </View>
+            
          
-              <View style={styles.inputView}>
+              
               <TextBoxPassword placeholder={'Password'} 
                             textSetter={setPassword} 
                             value={password}/>
-              </View>
-         
-              <TouchableOpacity style={styles.loginBtn} >
-                <Text style={styles.buttonText}>LOGIN</Text>
-              </TouchableOpacity>
+
+              <ClickableButton buttonText={"LOGIN"} />
 
               <TouchableOpacity style={styles.finger}>
               <Image  source={require('../../assets/Images/fingerprint.png')} style={styles.fingerprintImage} />
@@ -54,11 +39,12 @@ const LoginScreen = ({props}) => {
                   </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={onCreateNewAccountPress}>
-                <Text style={styles.createNewAndForgotPassword}>Create a new account</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Registration')} >
+                <Text style={styles.createNewAndForgotPassword}
+                >Create a new account</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={onForgotPasswordPress}>
+              <TouchableOpacity>
                 <Text style={styles.createNewAndForgotPassword}>Forgot Password?</Text>
               </TouchableOpacity>
          
