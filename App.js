@@ -6,10 +6,13 @@ import StackNavigatorContainer from './src/models/StackNavigatorContainer';
 import {Alert} from 'react-native'
 import {firebase} from './src/config/FirebaseConfig'
 import {AuthContext} from './src/contexts/AuthContext'
+import AndroidTimerFix from "./src/util/AndroidTimerFix";
 
 export default function App() {
-
-  const [user, setUser] = useState(null);
+    AndroidTimerFix(); // First of all, run a timer fix to suppress the LogBox timer warning messages.
+    
+    // State to keep track of user
+    const [user, setUser] = useState(null);
 
   /**
    * Function to handle user pickup through biometric authentication.
@@ -82,6 +85,7 @@ export default function App() {
                               const userData = firestoreDocument.data()
                               // Set user, this will then trigger the home screen through the navigation stack
                               setUser(userData)
+                             // Alert.alert(JSON.stringify(userData));
                           })
                           .catch(error => {
                               // Show login error on failure
@@ -145,7 +149,7 @@ export default function App() {
       }),
       []
   );
-
+ // Finally return the auth context and react navigation stack to launch the application.
   return (
     <AuthContext.Provider value={authContext}>
     <NavigationContainer>

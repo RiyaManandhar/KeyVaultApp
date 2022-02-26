@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View,ImageBackground,TouchableOpacity} from "react-native";
+import {Text, View,ImageBackground} from "react-native";
 import styles from "../../Styles/styles";
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';

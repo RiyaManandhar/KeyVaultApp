@@ -103,6 +103,27 @@ export default StyleSheet.create({
         margin: 20,
         width: "90%",
       },
-
+      forgotLogo:{
+        height: '25%', 
+        width: '50%',
+        margin:'10%',
+        marginTop:'-50%',
+      },
+      forgot:{
+        borderColor: 'black',
+        borderRadius: 10,
+        borderWidth:3,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop:15,
+        paddingBottom:40,
+        margin: 10,
+        width: "90%",
+      },
+      forgotText:{
+        fontSize:30,
+        fontWeight:'bold',
+        margin:10,
+      },
 
 });
