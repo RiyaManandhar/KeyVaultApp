@@ -11,8 +11,7 @@ import styles from "../Styles/styles";
  */
 export function ClickableButton({buttonText, onPressMethod}) {
     return (
-        <TouchableOpacity
-            style={styles.loginBtn}
+        <TouchableOpacity style={styles.clickableBtn}
             onPress={() => onPressMethod()}>
             <Text style={styles.buttonText}>{buttonText}</Text>
         </TouchableOpacity>

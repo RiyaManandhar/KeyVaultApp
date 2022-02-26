@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Text, Image,TouchableOpacity,ImageBackground } from "react-native";
+import {Text, Image,TouchableOpacity,ImageBackground,View } from "react-native";
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
@@ -13,7 +13,8 @@ const LoginScreen = ({navigation}) => {
 
 
         return ( 
-          <ImageBackground style={styles.bgImgStyle} 
+         <View style={styles.container}>
+            <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
 
               <Image style={styles.loginLogo} 
@@ -24,8 +25,6 @@ const LoginScreen = ({navigation}) => {
                             textSetter={setEmail} 
                             value={email}/>
             
-         
-              
               <TextBoxPassword placeholder={'Password'} 
                             textSetter={setPassword} 
                             value={password}/>
@@ -50,6 +49,8 @@ const LoginScreen = ({navigation}) => {
          
              
               </ImageBackground>
+
+         </View>
          );
     }
 

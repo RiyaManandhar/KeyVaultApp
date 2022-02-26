@@ -11,7 +11,7 @@ import styles from "../Styles/styles";
  */
 export function TextBoxInput({placeholder,textSetter, value}){
     return (
-        <View style={styles.inputView}>
+       <View style={styles.inputView}>
         <TextInput
             style={styles.textInput}
             placeholderTextColor="black"
@@ -21,6 +21,6 @@ export function TextBoxInput({placeholder,textSetter, value}){
             underlineColorAndroid="transparent"
             autoCapitalize="none"
         />
-        </View>
+       </View>
     )
 }

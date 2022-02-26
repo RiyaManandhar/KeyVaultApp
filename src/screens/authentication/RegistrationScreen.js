@@ -1,18 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, View, Image, TextInput,TouchableOpacity,ImageBackground } from "react-native";
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
 import styles from "../../Styles/styles"
 
-const RegistrationScreen = () => {
 
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+export function RegistrationScreen({setFullName, fullName, setEmail, email, setPassword, password, setConfirmPassword, confirmPassword, onRegisterPress, onFooterLinkPress}){
+
 
         return ( 
+            <View style={styles.container}>
             <ImageBackground style={styles.bgImgStyle} 
                             source={require('../../assets/Images/BgImage.jpg')}>
   
@@ -43,13 +41,13 @@ const RegistrationScreen = () => {
                     />
                     </View>
               
-                    <ClickableButton buttonText={"Register"} />
+                    <ClickableButton buttonText={"Register"} onPressMethod={onRegisterPress}/>
 
-                    <TouchableOpacity>
-                        <Text style={styles.createNewAndForgotPassword}> Already have an account? Log in</Text>
+                    <TouchableOpacity onPress={onFooterLinkPress} >
+                        <Text style={styles.createNewAndForgotPassword}> Already have an account?  Log in</Text>
                     </TouchableOpacity>
                   
                 </ImageBackground>
+                </View>
            );
 }
-export default RegistrationScreen;

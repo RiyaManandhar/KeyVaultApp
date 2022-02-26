@@ -24,9 +24,10 @@ export default StyleSheet.create({
           paddingHorizontal: 15,
           paddingVertical: 10,
           borderRadius: 30,
-          margin: 5,
+          marginTop: 5,
+          marginBottom:5,
         },
-        loginBtn: {
+        clickableBtn: {
           width: "80%",
           borderRadius: 25,
           height: 50,
@@ -62,16 +63,15 @@ export default StyleSheet.create({
           margin:'3%',
           fontWeight:'bold'
         },
-        container:{ flex: 1,
+        container:{ 
+          flex: 1,
           alignItems: 'center',
-          paddingTop: 10,
-          paddingBottom: 10
         },
         footerView:{
           flex: 1,
-        alignItems: "center",
-        marginTop: 20,
-        marginBottom: 20
+          alignItems: "center",
+          marginTop: 20,
+          marginBottom: 20
         },
         footerText:{
           fontSize: 16,
@@ -83,20 +83,26 @@ export default StyleSheet.create({
           fontWeight: "bold",
           fontSize: 16
         },
-        button: {
-          width: "100%",
-          borderRadius: 25,
-          height: 50,
-          alignItems: "center",
-          justifyContent: "center",
-          marginTop: '5%',
-          backgroundColor: "#213826",
-      },
-      title:{
+        title:{
           fontSize: 40,
           fontWeight: "bold"
+        },
+       //
+       textEncry: {
+          fontSize: 18,
+          margin:5,
       },
-       
+      insideView:{
+        borderColor: 'black',
+        borderRadius: 10,
+        borderWidth:3,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop:15,
+        paddingBottom:15,
+        margin: 20,
+        width: "90%",
+      },
 
 
 });
