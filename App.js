@@ -1,12 +1,18 @@
 import React, {useState, useMemo} from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import StackNavigatorContainer from './src/models/StackNavigatorContainer';
-
+import {StackNavigatorContainer} from "./src/models/StackNavigatorContainer";
 import {Alert} from 'react-native'
 import {firebase} from './src/config/FirebaseConfig'
 import {AuthContext} from './src/contexts/AuthContext'
 import AndroidTimerFix from "./src/util/AndroidTimerFix";
+
+/**
+ * Main Insertion Point for the Application.
+ * This function is primarily used for user authentication and its relevant actions such as sign in, sign out.
+ * As the navigation stack is oriented around authentication, its insertion point is also here
+ * @returns {JSX.Element} AuthContext and navigation stack, this then uses react-navigation to start up the application.
+ */
 
 export default function App() {
     AndroidTimerFix(); // First of all, run a timer fix to suppress the LogBox timer warning messages.
@@ -153,7 +159,7 @@ export default function App() {
   return (
     <AuthContext.Provider value={authContext}>
     <NavigationContainer>
-  
+        {/* Call Stack Navigator */}
       <StackNavigatorContainer user={user} signOut={signOut} biometricAuth={biometricAuth}/>
    
     </NavigationContainer>
