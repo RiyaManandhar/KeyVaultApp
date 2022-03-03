@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {FlatList, TextInput, View, Button, SafeAreaView, Platform, Text} from 'react-native'
+import {FlatList, TextInput, View, SafeAreaView, Platform, Text} from 'react-native'
 import styles from '../../Styles/styles';
 import {firebase} from '../../config/FirebaseConfig'
 import CryptoES from "crypto-es";
@@ -21,14 +21,14 @@ let OPERATING_SYSTEM = Platform.OS;
  * @param navigation react navigation
  * @returns {JSX.Element} home screen view
  */
-export default function HomeScreen(props, navigation) {
+export default function PasswordsScreen(props) {
     const settingsContext = useContext(SettingsContext); // use settings context to retrieve sorting preference
 
     // State for storing the retrieved entries from firebase as an array
     const [entities, setEntities] = useState([])
 
     // Firebase authentication and database information
-    const userID = props.extraData.id
+    const userID = props.extraInfos.id
     const entityRef = firebase.firestore().collection('users/' + userID + '/passwords')
 
     // Decryption Key
@@ -50,18 +50,11 @@ export default function HomeScreen(props, navigation) {
                 headerRight: (() =>
                         // Use mobile options menu
                         <OptionsMenuHome sortByName={sortByName} sortByDateCreated={sortByDateCreated}
-                                         sortByDateModified={sortByDateModified} goToSettings={goToSettings}/>
+                                         sortByDateModified={sortByDateModified}/>
                 )
             });
-        } else {
-            props.navigation.setOptions({
-                headerRight: (() => (
-                    // Fallback to settings button
-                    <Button title="Settings" onPress={() => goToSettings()}/>
-                ))
-            });
-        }
-    }, [navigation]);
+        } 
+    });
 
     // On entering this page, retrieve the decryption key for this user from Firebase then get the password entries themselves
     useEffect(() => {
@@ -103,11 +96,6 @@ export default function HomeScreen(props, navigation) {
         performSearch(searchString)
     }
 
-    // Intermediary method for navigating to the settings screen.
-    // The options menu library doesn't seem to like directly calling JSX within its listenr
-    const goToSettings = () => {
-        props.navigation.navigate('SettingsScreen', {userId: userID})
-    }
 
     /**
      * Perform a search through the users password database. If no search options are selected then all results are returned.
@@ -183,8 +171,9 @@ export default function HomeScreen(props, navigation) {
                            onChangeText={(text) => (performSearch(text))} value={searchString}/>
                 {/* Sorted by Text */}
                 <Text style={styles.text}>Sorted by {settingsContext.sortingOption.label}</Text>
-                {/* Entity List */}
+                {/* Entity List  */}
                 <FlatList data={entities} renderItem={renderEntity} keyExtractor={(item) => item.id}/>
+           
             </SafeAreaView>
             <FloatingActionButton props={props} userIdentifier={userID}/>
         </View>

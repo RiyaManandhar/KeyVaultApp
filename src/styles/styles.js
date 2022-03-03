@@ -126,7 +126,7 @@ export default StyleSheet.create({
         margin:10,
       },
 
-      ////./screens/home/HomeScreen.js
+      ////./screens/home/PasswordScreen.js
       containList:{
         flex:1,
         backgroundColor:'#DAF7E4',
@@ -155,6 +155,6 @@ export default StyleSheet.create({
         marginLeft: 30,
         paddingLeft: 0,
       },
-
+     
 
 });
