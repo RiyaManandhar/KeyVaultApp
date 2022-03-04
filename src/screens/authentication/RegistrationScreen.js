@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image, TextInput,TouchableOpacity,ImageBackground } from "react-native";
+import {Text, View, Image, TextInput,TouchableOpacity,ImageBackground,KeyboardAvoidingView } from "react-native";
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
@@ -10,7 +10,10 @@ export function RegistrationScreen({setFullName, fullName, setEmail, email, setP
 
 
         return ( 
-            <View style={styles.container}>
+            <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
+          >
             <ImageBackground style={styles.bgImgStyle} 
                             source={require('../../assets/Images/BgImage.jpg')}>
   
@@ -48,6 +51,6 @@ export function RegistrationScreen({setFullName, fullName, setEmail, email, setP
                     </TouchableOpacity>
                   
                 </ImageBackground>
-                </View>
+                </KeyboardAvoidingView>
            );
 }

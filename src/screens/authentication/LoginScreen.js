@@ -1,7 +1,8 @@
 import React, {useState,useContext,useEffect} from 'react'
-import {Alert,Text, Image,TouchableOpacity,ImageBackground,View } from "react-native";
+import {Alert,Text, Image,TouchableOpacity,ImageBackground,View,KeyboardAvoidingView } from "react-native";
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
+//import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import {AuthContext} from "../../contexts/AuthContext";
 import styles from "../../Styles/styles";
 import {firebase} from '../../config/FirebaseConfig'
@@ -101,9 +102,14 @@ const LoginScreen = (props) => {
   props.navigation.navigate('ForgotPassword')
 }
         return ( 
-         <View style={styles.container}>
+            <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
+          >
+                
             <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
+             
 
               <Image style={styles.loginLogo} 
                     source={require('../../assets/Images/logo.png')} />
@@ -139,11 +145,11 @@ const LoginScreen = (props) => {
               <TouchableOpacity>
                 <Text style={styles.createNewAndForgotPassword} onPress={onForgotPasswordLinkPress}>Forgot Password?</Text>
               </TouchableOpacity>
-         
-             
+            
+            
               </ImageBackground>
-
-         </View>
+              </KeyboardAvoidingView>
+             
          );
     }
 

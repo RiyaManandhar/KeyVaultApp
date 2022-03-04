@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View,ImageBackground} from "react-native";
+import {Text, View,ImageBackground,KeyboardAvoidingView} from "react-native";
 import styles from "../../Styles/styles";
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
@@ -25,7 +25,10 @@ export function EncryptionKeyScreen({
                                         onRegisterPress
                                     }) {
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.containerEncryption}
+      >
             <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
              <View style={styles.insideView}>
@@ -35,7 +38,7 @@ export function EncryptionKeyScreen({
                     <Text style={styles.textEncry}>It is recommend that you copy this key for future reference.</Text>
                 </View>
 
-                <TextBoxInput placeholder={'Email Address'} 
+                <TextBoxInput placeholder={'Encryption Passphrase'} 
                             textSetter={setPassphrase} 
                             value={passphrase}/>
                 <TextBoxInput placeholder={'Confirm Encryption Passphrase'} 
@@ -51,6 +54,6 @@ export function EncryptionKeyScreen({
              
               </ImageBackground>
 
-         </View>
+         </KeyboardAvoidingView>
     );
 }

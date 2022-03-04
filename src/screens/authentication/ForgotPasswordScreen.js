@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Alert, View,ImageBackground,Text,Image} from 'react-native'
+import {Alert, View,ImageBackground,Text,Image,KeyboardAvoidingView} from 'react-native'
 import {firebase} from "../../config/FirebaseConfig";
 import {ClickableButton} from "../../components/ClickableButton";
 import { TextBoxInput } from '../../components/TextBoxInput';
@@ -48,7 +48,10 @@ export default function ForgotPasswordScreen(props) {
      * - Recovery Email Button
      */
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
             <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
                  <Image style={styles.forgotLogo} 
@@ -62,6 +65,6 @@ export default function ForgotPasswordScreen(props) {
 
                 </View>
            </ImageBackground>
-        </View>
+        </KeyboardAvoidingView>
     )
 }

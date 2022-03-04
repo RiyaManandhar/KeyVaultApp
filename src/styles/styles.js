@@ -14,6 +14,7 @@ export default StyleSheet.create({
           height: '21%', 
           width: '50%',
           margin:'10%',
+          resizeMode: 'contain',
         },
         inputView: {
           width: "80%",
@@ -66,6 +67,11 @@ export default StyleSheet.create({
         container:{ 
           flex: 1,
           alignItems: 'center',
+        },
+        containerEncryption:{
+          flex: 1,
+          alignItems: 'center',
+          marginTop:'-50%',
         },
         footerView:{
           flex: 1,
