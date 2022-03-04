@@ -52,15 +52,22 @@ export default function ForgotPasswordScreen(props) {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
+           {/* Background  Image*/}
             <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
-                 <Image style={styles.forgotLogo} 
-                    source={require('../../assets/Images/forgot-b.png')} />
 
-                <View style={styles.forgot}>
+                {/* Forgot page image*/}
+                 <Image style={styles.forgotImage} 
+                    source={require('../../assets/Images/forgot-b.png')} />
+                
+                 {/* Black box container & Texts*/}
+                <View style={styles.forgotBox}>
                     <Text style={styles.forgotText}>Forgot Password?</Text>
                 
+                {/* Email for Forgot password*/}
                 <TextBoxInput placeholder={'E-mail Address'} textSetter={setEmail} value={email}/>
+
+                 {/*Send Recovery Email Button */}
                 <ClickableButton buttonText={"Send Recovery Email"} onPressMethod={onConfirmationPress}/>
 
                 </View>

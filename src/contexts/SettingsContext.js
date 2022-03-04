@@ -1,6 +1,4 @@
 import React from "react";
-
-
 /**
  * Context for storing application user options that persist while the application is open.
  * The values these options are set to below will act as the defaults when the application is started.

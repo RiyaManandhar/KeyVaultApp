@@ -9,6 +9,7 @@ import styles from "../Styles/styles";
  * @param onPressMethod Passed in function for what you want the button to do
  * @returns {JSX.Element} Button Render View
  */
+
 export function ClickableButton({buttonText, onPressMethod}) {
     return (
         <TouchableOpacity style={styles.clickableBtn}

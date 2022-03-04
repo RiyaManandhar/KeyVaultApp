@@ -8,30 +8,36 @@ import styles from "../../Styles/styles"
 
 export function RegistrationScreen({setFullName, fullName, setEmail, email, setPassword, password, setConfirmPassword, confirmPassword, onRegisterPress, onFooterLinkPress}){
 
-
         return ( 
             <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}
           >
+            {/* Background  Image*/}
             <ImageBackground style={styles.bgImgStyle} 
                             source={require('../../assets/Images/BgImage.jpg')}>
-  
-                <Image style={styles.loginLogo} 
+
+                {/* Logo */}
+                <Image style={styles.logo} 
                       source={require('../../assets/Images/logo.png')} />
-  
+
+
+                       {/* Text input boxes */}
                     <TextBoxInput placeholder={'Full Name'} 
                               textSetter={setFullName} 
                               value={fullName}/>
 
+                      {/* Text input boxes */}
                     <TextBoxInput placeholder={'Email Address'} 
                               textSetter={setEmail} 
                               value={email}/>
-                
+                    
+                    {/* Text Password input boxes */}
                     <TextBoxPassword placeholder={'Password'} 
                               textSetter={setPassword} 
                               value={password}/>
 
+                    {/* Confirm Password */}
                     <View style={styles.inputView}>
                     <TextInput
                         style={styles.textInput}
@@ -44,8 +50,10 @@ export function RegistrationScreen({setFullName, fullName, setEmail, email, setP
                     />
                     </View>
               
+                      {/* Register buttons */}
                     <ClickableButton buttonText={"Register"} onPressMethod={onRegisterPress}/>
 
+                     {/* Already have an account? Login */}
                     <TouchableOpacity onPress={onFooterLinkPress} >
                         <Text style={styles.createNewAndForgotPassword}> Already have an account?  Log in</Text>
                     </TouchableOpacity>

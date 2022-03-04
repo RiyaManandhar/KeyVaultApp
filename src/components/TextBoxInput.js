@@ -9,6 +9,7 @@ import styles from "../Styles/styles";
  * @param value initial value of the text input
  * @returns {JSX.Element} text input render view
  */
+
 export function TextBoxInput({placeholder,textSetter, value}){
     return (
        <View style={styles.inputView}>

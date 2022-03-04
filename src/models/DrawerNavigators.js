@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import ProfileScreen  from '../screens/home/ProfileScreen';
-import PasswordsScreen  from '../screens/home/PasswordsScreen';
+import HomeScreen  from '../screens/home/HomeScreen';
 import SettingsScreen from '../screens/home/SettingsScreen';
 import CustomDrawer from '../components/CustomDrawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -33,7 +33,7 @@ export default function DrawerNavigators({extraData}) {
           <Drawer.Screen name="Passwords" options={{ drawerIcon: ({color}) => (
             <Ionicons name="person-outline" size={22} color={color} />
           ),}}> 
-           {props => <PasswordsScreen {...props} extraInfos={extraData}/>}
+           {props => <HomeScreen {...props} extraInfos={extraData}/>}
            </Drawer.Screen>
      <Drawer.Screen
         name="Profile"

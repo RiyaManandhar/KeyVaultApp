@@ -2,12 +2,16 @@ import React, {useState,useContext,useEffect} from 'react'
 import {Alert,Text, Image,TouchableOpacity,ImageBackground,View,KeyboardAvoidingView } from "react-native";
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
-//import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import {AuthContext} from "../../contexts/AuthContext";
 import styles from "../../Styles/styles";
 import {firebase} from '../../config/FirebaseConfig'
 import * as LocalAuthentication from 'expo-local-authentication';
 
+/**
+ * Login Screen
+ * @param props application props
+ * @returns {JSX.Element} login screen view
+ */
 
 const LoginScreen = (props) => {
   const [email, setEmail] = useState('')
@@ -88,60 +92,77 @@ const LoginScreen = (props) => {
         }
     }
 
-   /**
-     * Listener method for Footer Link - Go to the Registration Screen.
-     */
-    const onFooterLinkPress = () => {
-      props.navigation.navigate('Registration')
-  }
+        /**
+        * Listener method for Footer Link - Go to the Registration Screen.
+        */
+        const onFooterLinkPress = () => {
+             props.navigation.navigate('Registration')
+        }
 
-/**
-     * Listner Method for Forgot Password Link - Go to the Forgot Password Screen.
-     */
- const onForgotPasswordLinkPress = () => {
-  props.navigation.navigate('ForgotPassword')
-}
+        /**
+        * Listner Method for Forgot Password Link - Go to the Forgot Password Screen.
+        */
+        const onForgotPasswordLinkPress = () => {
+            props.navigation.navigate('ForgotPassword')
+        }
+        
+        /**
+     * Return contents:
+     * - Email Address Input Box
+     * - Password Input Box
+     * - Sign in button
+     * - Biometric(Fingerprint) sign in button
+     * - Create a new account footer
+     * - Forgot password footer
+         */
+        
+
         return ( 
             <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}
           >
-                
+                {/* Background  Image*/}
             <ImageBackground style={styles.bgImgStyle} 
                           source={require('../../assets/Images/BgImage.jpg')}>
              
-
-              <Image style={styles.loginLogo} 
+            {/* Logo */}
+              <Image style={styles.logo} 
                     source={require('../../assets/Images/logo.png')} />
 
-             
+              {/* Text input boxes */}
                 <TextBoxInput placeholder={'Email Address'} 
                             textSetter={setEmail} 
                             value={email}/>
             
+            {/* Text Password input boxes */}
               <TextBoxPassword placeholder={'Password'} 
                             textSetter={setPassword} 
                             value={password}/>
 
-               {/* Sign in buttons */}
+               {/* Login buttons */}
                <TouchableOpacity
                     style={styles.clickableBtn}
                     onPress={() => signIn({email, password})}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
 
+                {/* Fingerprint */}
               <TouchableOpacity style={styles.finger} onPress={() => handleBiometrics()}>
               <Image  source={require('../../assets/Images/fingerprint.png')} style={styles.fingerprintImage} />
                 <Text style={styles.tapFingerText} enabled={biometricsEnabled}>
                  Tap to Login with fingerprint
                   </Text>
               </TouchableOpacity>
+                
 
+                {/* Create new account button */} 
               <TouchableOpacity onPress={onFooterLinkPress} >
                 <Text style={styles.createNewAndForgotPassword}
                 >Create a new account</Text>
               </TouchableOpacity>
-
+              
+              {/* Forgot Password button */} 
               <TouchableOpacity>
                 <Text style={styles.createNewAndForgotPassword} onPress={onForgotPasswordLinkPress}>Forgot Password?</Text>
               </TouchableOpacity>

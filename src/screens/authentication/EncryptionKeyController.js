@@ -10,6 +10,7 @@ import {EncryptionKeyScreen} from "./EncryptionKeyScreen";
  * @param props application props
  * @returns {JSX.Element} encryption key screen render view
  */
+
 export default function EncryptionKeyController(props) {
     // route parameters, name, email and password passed in from the registration screen
     const {fullName, email, password, confirmPassword} = props.route.params;

@@ -3,6 +3,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 //Configure these values and rename this file to FirebaseConfig.js
+//Add own firebase file's values below
 const firebaseConfig = {
     apiKey: "AIzaSyBcf-LwZflx4XoMJcpL2vvcFb85ZZMR-Ho",
     authDomain: "keyvault-f17d6.firebaseapp.com",

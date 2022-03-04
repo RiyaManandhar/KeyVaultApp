@@ -1,6 +1,7 @@
 import React from "react";
 import {View, Text, TouchableOpacity, StyleSheet} from "react-native";
 import {Circle} from 'react-native-shape';
+import styles from "../Styles/styles";
 
 /**
  * Entity View for showing Password Entries on the Home Screen.
@@ -27,38 +28,13 @@ export function EntityView({displayName, email, passwordEntityId, userId, accent
             });
         }}>
 
-            <View style={styles.container}>
+            <View style={styles.entityContainer}>
                 <Circle color={accent}/>
                 <View>
-                    <Text style={styles.name}>{displayName}</Text>
-                    <Text style={styles.email}>{email}</Text>
+                    <Text style={styles.entityName}>{displayName}</Text>
+                    <Text style={styles.entityEmail}>{email}</Text>
                 </View>
             </View>
         </TouchableOpacity>
     );
 }
-
-// Internal Stylesheet for drawing padded box around entity, and positioning text and circle
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "white",
-        margin: 8,
-        borderRadius: 8,
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        paddingVertical: 12,
-        paddingLeft: 12,
-        borderBottomColor: "#E0E0E0",
-        borderBottomWidth: 2,
-    },
-    name: {
-        fontSize: 24,
-        marginBottom: 4,
-        paddingLeft: 24,
-    },
-    email: {
-        fontSize: 18,
-        paddingLeft: 24,
-    },
-});

@@ -4,30 +4,25 @@ import { StyleSheet } from 'react-native';
  * used to store stylesheet information for entities which are used throughout the application.
  */
 export default StyleSheet.create({
+//common
+        container:{ 
+          flex: 1,
+          alignItems: 'center',
+        },
         bgImgStyle: {
           height: '100%',
           width: '100%',
           justifyContent: 'center',
           alignItems:'center',
         },
-        loginLogo:{
+        logo:{
           height: '21%', 
           width: '50%',
           margin:'10%',
           resizeMode: 'contain',
         },
-        inputView: {
-          width: "80%",
-        },
-        textInput:{
-          backgroundColor:'rgba(255, 255,255,0.4)',
-          textAlign:'center',
-          paddingHorizontal: 15,
-          paddingVertical: 10,
-          borderRadius: 30,
-          marginTop: 5,
-          marginBottom:5,
-        },
+        
+//ClickableButton.js
         clickableBtn: {
           width: "80%",
           borderRadius: 25,
@@ -42,6 +37,8 @@ export default StyleSheet.create({
           fontWeight: '700',
           fontSize:16
         },
+
+//LoginScreen 
         finger:{
           display:'flex',
           flexDirection:'row',
@@ -64,103 +61,155 @@ export default StyleSheet.create({
           margin:'3%',
           fontWeight:'bold'
         },
-        container:{ 
-          flex: 1,
-          alignItems: 'center',
+
+//TextBoxInput & TextBoxPassword plus (Registraion Screen's confirm password)
+        inputView: {
+          width: "80%",
         },
+        textInput:{
+          backgroundColor:'rgba(255, 255,255,0.4)',
+          textAlign:'center',
+          paddingHorizontal: 15,
+          paddingVertical: 10,
+          borderRadius: 30,
+          marginTop: 5,
+          marginBottom:5,
+        },
+
+//ForgotPassword
+        forgotImage:{
+          height: '25%', 
+          width: '50%',
+          margin:'10%',
+          marginTop:'-50%',
+        },
+        forgotBox:{
+          borderColor: 'black',
+          borderRadius: 10,
+          borderWidth:3,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop:15,
+          paddingBottom:40,
+          margin: 10,
+          width: "90%",
+        },
+        forgotText:{
+          fontSize:30,
+          fontWeight:'bold',
+          margin:10,
+        },
+
+//EncryptionKeyScreen.js
         containerEncryption:{
           flex: 1,
           alignItems: 'center',
           marginTop:'-50%',
         },
-        footerView:{
-          flex: 1,
+        encrypBox:{
+          borderColor: 'black',
+          borderRadius: 10,
+          borderWidth:3,
+          justifyContent: "center",
           alignItems: "center",
-          marginTop: 20,
-          marginBottom: 20
+          paddingTop:15,
+          paddingBottom:15,
+          margin: 20,
+          width: "90%",
         },
-        footerText:{
-          fontSize: 16,
-          color: '#002366',
-          marginBottom: 15
-        },
-        footerLink:{
-          color: "#002366",
-          fontWeight: "bold",
-          fontSize: 16
-        },
-        title:{
-          fontSize: 40,
-          fontWeight: "bold"
-        },
-       //
-       textEncry: {
+        textEncry: {
           fontSize: 18,
           margin:5,
-      },
-      insideView:{
-        borderColor: 'black',
-        borderRadius: 10,
-        borderWidth:3,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop:15,
-        paddingBottom:15,
-        margin: 20,
-        width: "90%",
-      },
-      forgotLogo:{
-        height: '25%', 
-        width: '50%',
-        margin:'10%',
-        marginTop:'-50%',
-      },
-      forgot:{
-        borderColor: 'black',
-        borderRadius: 10,
-        borderWidth:3,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop:15,
-        paddingBottom:40,
-        margin: 10,
-        width: "90%",
-      },
-      forgotText:{
-        fontSize:30,
-        fontWeight:'bold',
-        margin:10,
-      },
+        },
 
-      ////./screens/home/PasswordScreen.js
-      containList:{
-        flex:1,
-        backgroundColor:'#DAF7E4',
-        alignItems: 'center',
-      },
-      listContainer:{
-        marginTop: 20,
-        marginBottom: 60,
-        padding: 0,
-        paddingBottom: 15,
-        width:'90%',
-      },
-      input:{
-        height: 48,
-        borderRadius: 5,
-        overflow: 'hidden',
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        paddingLeft: 16
-      },
-      text:{
-        fontSize: 18,
-        marginLeft: 30,
-        paddingLeft: 0,
-      },
-     
+//HomeScreen.js
+        containList:{
+          flex:1,
+          backgroundColor:'#DAF7E4',
+          alignItems: 'center',
+        },
+        listContainer:{
+          marginTop: 20,
+          marginBottom: 60,
+          padding: 0,
+          paddingBottom: 15,
+          width:'90%',
+        },
+        searchInput:{
+          height: 48,
+          borderRadius: 5,
+          overflow: 'hidden',
+          backgroundColor: 'white',
+          marginTop: 10,
+          marginBottom: 10,
+          marginLeft: 10,
+          marginRight: 10,
+          paddingLeft: 16
+        },
+        sortText:{
+          fontSize: 18,
+          marginLeft: 30,
+          paddingLeft: 0,
+        },
+
+//GenerateScreen.js
+        generateContainer:{
+          marginVertical: 16,
+        },
+        //same text named text
+        generateText:{
+          fontSize: 18,
+          marginLeft: 30,
+          paddingLeft: 0,
+        },
+        passwordLengthText:{
+          alignSelf: 'center',
+          fontSize: 36,
+          fontWeight: "bold",
+        },
+
+//ToggleSwitch.js
+        switchView:{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginRight: 30,
+          paddingVertical: 12,
+        },
+      //text
+
+//EntityView.js for drawing padded box around entity, and positioning text and circle
+        entityContainer: {
+          backgroundColor: "white",
+          margin: 8,
+          borderRadius: 8,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          paddingVertical: 12,
+          paddingLeft: 12,
+          borderBottomColor: "#E0E0E0",
+          borderBottomWidth: 2,
+        },
+        entityName:{
+          fontSize: 24,
+          marginBottom: 4,
+          paddingLeft: 24,
+        },
+        entityEmail:{
+          fontSize: 18,
+          paddingLeft: 24,
+        },
+
+//FloatingActionButton to position FAB button
+        fab: {
+          right: 20,
+          bottom: 25,
+        },
+
+//LengthSlider
+        slider:{
+          marginHorizontal: 30,
+        },
+//
 
 });

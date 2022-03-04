@@ -8,6 +8,8 @@ import { RegistrationScreen } from './RegistrationScreen'
  * @param props application props
  * @returns {JSX.Element} registration screen view
  */
+
+
 export default function RegistrationController(props) {
     // States to keep track of input text boxes
     const [fullName, setFullName] = useState('')

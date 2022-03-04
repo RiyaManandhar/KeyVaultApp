@@ -10,10 +10,7 @@ import {FloatingActionButton} from '../../components/FloatingActionButton';
 import {EntityView} from '../../components/EntityView';
 
 
-
-
 let OPERATING_SYSTEM = Platform.OS;
-
 /**
  * Home Screen - Central area of the app where user stories can then be performed.
  * This screen displays the users password entries, a button to add more, a search box and a menu with further options
@@ -21,7 +18,7 @@ let OPERATING_SYSTEM = Platform.OS;
  * @param navigation react navigation
  * @returns {JSX.Element} home screen view
  */
-export default function PasswordsScreen(props) {
+export default function HomeScreen(props) {
     const settingsContext = useContext(SettingsContext); // use settings context to retrieve sorting preference
 
     // State for storing the retrieved entries from firebase as an array
@@ -49,7 +46,8 @@ export default function PasswordsScreen(props) {
             props.navigation.setOptions({
                 headerRight: (() =>
                         // Use mobile options menu
-                        <OptionsMenuHome sortByName={sortByName} sortByDateCreated={sortByDateCreated}
+                        <OptionsMenuHome sortByName={sortByName} 
+                                         sortByDateCreated={sortByDateCreated}
                                          sortByDateModified={sortByDateModified}/>
                 )
             });
@@ -62,14 +60,11 @@ export default function PasswordsScreen(props) {
             let data = snapshot.data()
             setPassphrase(data.passphrase.toString());
         }, [])
-
-
         props.navigation.addListener('focus', () => {
             // Retrieve entries from the database
             performSearch(searchString);
         });
     }, [])
-
 
     /**
      * Sorting Options
@@ -166,15 +161,20 @@ export default function PasswordsScreen(props) {
     return (
         <View style={styles.containList}>
             <SafeAreaView style={styles.listContainer}>
+                
                 {/* Search Box */}
-                <TextInput style={styles.input} placeholder="Start typing to search..."
+                <TextInput style={styles.searchInput} placeholder="Start typing to search..."
                            onChangeText={(text) => (performSearch(text))} value={searchString}/>
+                
                 {/* Sorted by Text */}
-                <Text style={styles.text}>Sorted by {settingsContext.sortingOption.label}</Text>
+                <Text style={styles.sortText}>Sorted by {settingsContext.sortingOption.label}</Text>
+                
                 {/* Entity List  */}
                 <FlatList data={entities} renderItem={renderEntity} keyExtractor={(item) => item.id}/>
            
             </SafeAreaView>
+            
+            {/* Floating Action Button (gives values on pressing ADD button) */}
             <FloatingActionButton props={props} userIdentifier={userID}/>
         </View>
     )

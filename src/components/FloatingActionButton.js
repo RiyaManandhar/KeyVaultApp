@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet} from "react-native";
+import styles from '../Styles/styles'
 import {FAB} from 'react-native-elements';
 
 /**
@@ -24,11 +24,3 @@ export function FloatingActionButton({props, userIdentifier}) {
         />
     );
 }
-
-// Internal stylesheet to position FAB button
-const styles = StyleSheet.create({
-    fab: {
-        right: 20,
-        bottom: 25,
-    },
-});
