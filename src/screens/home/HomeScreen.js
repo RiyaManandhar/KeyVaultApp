@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {FlatList, TextInput, View, SafeAreaView, Platform, Text} from 'react-native'
+import {FlatList, TextInput, Button,View, SafeAreaView, Platform, Text} from 'react-native'
 import styles from '../../Styles/styles';
 import {firebase} from '../../config/FirebaseConfig'
 import CryptoES from "crypto-es";
@@ -8,6 +8,7 @@ import SettingsContext from "../../contexts/SettingsContext";
 import {OptionsMenuHome} from "../../components/OptionsMenuHome";
 import {FloatingActionButton} from '../../components/FloatingActionButton';
 import {EntityView} from '../../components/EntityView';
+import ProfileScreen from './ProfileScreen';
 
 
 let OPERATING_SYSTEM = Platform.OS;
@@ -19,6 +20,7 @@ let OPERATING_SYSTEM = Platform.OS;
  * @returns {JSX.Element} home screen view
  */
 export default function HomeScreen(props) {
+   // const HomeScreen = (props) => {
     const settingsContext = useContext(SettingsContext); // use settings context to retrieve sorting preference
 
     // State for storing the retrieved entries from firebase as an array
@@ -91,6 +93,10 @@ export default function HomeScreen(props) {
         performSearch(searchString)
     }
 
+    //////
+//const AddPassword=()=>{
+  //  props.navigation.navigate('Root')
+//}
 
     /**
      * Perform a search through the users password database. If no search options are selected then all results are returned.
@@ -159,7 +165,7 @@ export default function HomeScreen(props) {
      * - Floating action add button
      */
     return (
-        <View style={styles.containList}>
+        <View style={styles.containerList}>
             <SafeAreaView style={styles.listContainer}>
                 
                 {/* Search Box */}
@@ -172,6 +178,10 @@ export default function HomeScreen(props) {
                 {/* Entity List  */}
                 <FlatList data={entities} renderItem={renderEntity} keyExtractor={(item) => item.id}/>
            
+                 {/*  <Button onPress={AddPassword} title="Learn More" color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                    />*/}
+
             </SafeAreaView>
             
             {/* Floating Action Button (gives values on pressing ADD button) */}
@@ -179,3 +189,4 @@ export default function HomeScreen(props) {
         </View>
     )
 }
+//export default HomeScreen;

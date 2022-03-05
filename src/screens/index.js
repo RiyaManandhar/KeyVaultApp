@@ -14,4 +14,7 @@ export { default as SettingsScreen } from './home/SettingsScreen'
 export {default as DrawerNavigators} from '../models/DrawerNavigators'
 export {default as ProfileScreen} from './home/ProfileScreen'
 
+//management
+export { default as AddPasswordScreen } from './management/AddPasswordScreen'
+
 

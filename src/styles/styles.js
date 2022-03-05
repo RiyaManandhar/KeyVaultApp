@@ -67,7 +67,7 @@ export default StyleSheet.create({
           width: "80%",
         },
         textInput:{
-          backgroundColor:'rgba(255, 255,255,0.4)',
+          backgroundColor:'rgba(255, 255,255,0.5)',
           textAlign:'center',
           paddingHorizontal: 15,
           paddingVertical: 10,
@@ -123,9 +123,10 @@ export default StyleSheet.create({
         },
 
 //HomeScreen.js
-        containList:{
+        containerList:{
           flex:1,
-          backgroundColor:'#DAF7E4',
+          //backgroundColor:'#DAF7E4',
+          backgroundColor:'#d0f4dc',
           alignItems: 'center',
         },
         listContainer:{
@@ -210,6 +211,41 @@ export default StyleSheet.create({
         slider:{
           marginHorizontal: 30,
         },
-//
+//AddPassword Screen
+        adds:{
+          margin:'10%',
+          width:'95%',
+          alignItems:'center',
+          marginBottom:10,
+        },
+        picker:{
+          //marginTop: 5,
+          //marginBottom: 5,
+          //marginLeft: 25,
+          //marginRight: 25,
+          //paddingHorizontal: '40%', 
+         // backgroundColor: 'yellow', 
+          //borderWidth: 5,
+          marginVertical: 30,
+          width: 300,
+          padding: 10,
+          borderWidth: 1,
+          borderColor: "red",
+         
+        },
+        pick:{
+          fontSize:18,
+          fontWeight:'bold',
+        },
+        colorView:{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: 'rgba(255, 255,255,0.5)',
+          width:'80%',
+          borderRadius:25,
+          maxHeight:'20%',
+          
+        },
 
 });
