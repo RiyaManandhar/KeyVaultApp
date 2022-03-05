@@ -90,7 +90,11 @@ export default function GenerateScreen(props) {
             <ToggleSwitch text={"Include Lowercase Characters"} enabledStatus={lowerEnabled} switchValue={toggleLowerSwitch}/>
             <ToggleSwitch text={"Include Number Characters"} enabledStatus={numbersEnabled} switchValue={toggleNumberSwitch}/>
             <ToggleSwitch text={"Include Symbol Characters"} enabledStatus={symbolsEnabled} switchValue={toggleSymbolSwitch}/>
+
+            <View style={{alignItems:'center'}}>
             <ClickableButton buttonText={"Update Settings"} onPressMethod={returnScreen}/>
+            </View>
+
         </View>
     )
 }

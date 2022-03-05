@@ -127,6 +127,7 @@ export default StyleSheet.create({
           flex:1,
           //backgroundColor:'#DAF7E4',
           backgroundColor:'#d0f4dc',
+          //justifyContent:'center',
           alignItems: 'center',
         },
         listContainer:{
@@ -155,7 +156,11 @@ export default StyleSheet.create({
 
 //GenerateScreen.js
         generateContainer:{
-          marginVertical: 16,
+         flex:1,
+        //alignItems:'center',
+         // marginVertical: 16,
+          backgroundColor:'#d0f4dc',
+          paddingTop:40,
         },
         //same text named text
         generateText:{
@@ -176,7 +181,12 @@ export default StyleSheet.create({
           marginRight: 30,
           paddingVertical: 12,
         },
-      //text
+
+//LengthSlider
+        lengthSlider:{
+          marginHorizontal: '5%',
+  
+        },
 
 //EntityView.js for drawing padded box around entity, and positioning text and circle
         entityContainer: {
@@ -207,10 +217,7 @@ export default StyleSheet.create({
           bottom: 25,
         },
 
-//LengthSlider
-        slider:{
-          marginHorizontal: 30,
-        },
+
 //AddPassword Screen
         adds:{
           margin:'10%',
@@ -219,13 +226,6 @@ export default StyleSheet.create({
           marginBottom:10,
         },
         picker:{
-          //marginTop: 5,
-          //marginBottom: 5,
-          //marginLeft: 25,
-          //marginRight: 25,
-          //paddingHorizontal: '40%', 
-         // backgroundColor: 'yellow', 
-          //borderWidth: 5,
           marginVertical: 30,
           width: 300,
           padding: 10,

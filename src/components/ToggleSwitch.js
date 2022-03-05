@@ -14,6 +14,8 @@ export function ToggleSwitch({text, enabledStatus,switchValue}){
         <View style={styles.switchView}>
             <Text style={styles.generateText}>{text}</Text>
             <Switch
+                trackColor={{ false: '#fff', true: '#fff' }}
+                thumbColor={enabledStatus ? 'green' : 'red'}
                 onValueChange={switchValue}
                 value={enabledStatus}
             />

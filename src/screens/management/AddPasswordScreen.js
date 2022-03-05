@@ -1,22 +1,23 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {Alert,KeyboardAvoidingView,View,Text} from 'react-native'
-import {firebase} from '../../config/FirebaseConfig'
-import SettingsContext from '../../contexts/SettingsContext';
+import {Alert,View,Text} from 'react-native'
 import CryptoES from "crypto-es";
-import PasswordGeneration from "../../models/PasswordGeneration";
-
-import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
-import styles from '../../Styles/styles';
 import {Picker} from '@react-native-picker/picker';
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
+
+import styles from '../../Styles/styles';
+import {firebase} from '../../config/FirebaseConfig'
 import {colourPalette} from '../../constants/ColourPalette'
-import {ClickableButton} from '../../components/ClickableButton';
+import SettingsContext from '../../contexts/SettingsContext';
 import { TextBoxInput } from '../../components/TextBoxInput';
+import {ClickableButton} from '../../components/ClickableButton';
+import PasswordGeneration from "../../models/PasswordGeneration";
 
 /**
  * Controller Method for the Add Password Screen
  * @param props application props
  * @returns {JSX.Element} add password screen render
  */
+
 export default function AddPasswordController(props) {
     // States to store entity information
     const [passwordEntryName, setPasswordEntryName] = useState('')

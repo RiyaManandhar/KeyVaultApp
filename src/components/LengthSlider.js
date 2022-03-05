@@ -17,14 +17,15 @@ import Slider from "@react-native-community/slider";
  */
 export function LengthSlider({value, setter}) {
     return (
-        <View style={styles.slider}>
+        <View style={styles.lengthSlider}>
             <Slider
                 onValueChange={(text) => setter(text)}
-                minimumValue={1}
-                value={value}
+                minimumValue={10}
                 maximumValue={128}
+                value={value}
                 step={1}
-                minimumTrackTintColor={'#002366'}
+                minimumTrackTintColor={'red'}
+                thumbTintColor="green"
             />
         </View>
     );

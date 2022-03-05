@@ -1,14 +1,15 @@
 import * as React from 'react';
-import {View,Text,Button} from 'react-native'
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ProfileScreen  from '../screens/home/ProfileScreen';
-import HomeScreen  from '../screens/home/HomeScreen';
-import SettingsScreen from '../screens/home/SettingsScreen';
-import CustomDrawer from '../components/CustomDrawer';
+import 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import AddPasswordScreen from '../screens/management/AddPasswordScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import CustomDrawer from '../components/CustomDrawer';
+
+import { HomeScreen,ProfileScreen,SettingsScreen,AddPasswordScreen,GenerateScreen
+} from "../../index";
+
 
 const Drawer = createDrawerNavigator();
 const AppStack = createNativeStackNavigator();
@@ -24,6 +25,9 @@ function Root() {
       <AppStack.Screen name="AddPasswordScreen" component={AddPasswordScreen} 
                       options={{title: 'Add Password Entry'}}/>
      
+      <AppStack.Screen name="GenerateScreen" component={GenerateScreen}
+                                  options={{title: 'Password Options'}}/>
+     
     </AppStack.Navigator>
   );
 }
@@ -35,6 +39,7 @@ export default function DrawerNavigators({extraData}) {
    
     <NavigationContainer independent={true}>
        <Drawer.Navigator initialRouteName="Passwords"
+       
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
         headerShown: true,
