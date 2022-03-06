@@ -19,7 +19,7 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
           <>
               {/* if the user is signed in */}
               <Stack.Screen name="Drawer" options={{ headerShown: false}}>
-                  {props => <DrawerNavigators {...props} extraData={user}/>}
+                  {props => <DrawerNavigators {...props} extraData={user} signOut={signOut}/>}
               </Stack.Screen>
              {/* <Stack.Screen name="Passwords">
                         {props => <HomeScreen {...props} extraData={user} options={{}}/>}

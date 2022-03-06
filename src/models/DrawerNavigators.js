@@ -37,14 +37,14 @@ function Root() {
 }
 
 
-export default function DrawerNavigators({extraData}) {
+export default function DrawerNavigators({extraData,signOut}) {
  
   return (
    
     <NavigationContainer independent={true}>
        <Drawer.Navigator initialRouteName="Passwords"
        
-      drawerContent={props => <CustomDrawer {...props} />}
+      drawerContent={props => <CustomDrawer {...props} onSignOut={signOut}/>}
       screenOptions={{
         headerShown: true,
         drawerActiveBackgroundColor: '#8ad2a6',
