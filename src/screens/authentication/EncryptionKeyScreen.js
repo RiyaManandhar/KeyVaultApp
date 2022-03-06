@@ -37,9 +37,9 @@ export function EncryptionKeyScreen({   setPassphrase,
 
                  {/* Texts inside Encryption Page Box*/}
                 <View>
-                    <Text style={styles.textEncry}>Key Vault encrypts your information using Advanced Encryption Standard.</Text>
-                    <Text style={styles.textEncry}>For this to work, an encryption key is needed.</Text>
-                    <Text style={styles.textEncry}>It is recommend that you copy this key for future reference.</Text>
+                    <Text style={styles.text}>Key Vault encrypts your information using Advanced Encryption Standard.</Text>
+                    <Text style={styles.text}>For this to work, an encryption key is needed.</Text>
+                    <Text style={styles.text}>It is recommend that you copy this key for future reference.</Text>
                 </View>
                 
                 {/* Text input boxes */}

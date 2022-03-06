@@ -15,7 +15,10 @@ export { default as SettingsScreen } from './src/screens/home/SettingsScreen'
 export { default as ProfileScreen } from './src/screens/home/ProfileScreen'
 
 //management
-export { default as AddPasswordScreen } from './src/screens/management/AddPasswordScreen'
+export { default as AddPasswordScreen } from './src/screens/management/AddPasswordController'
 export { default as GenerateScreen } from './src/screens/management/GenerateScreen'
+export { default as ViewPasswordScreen } from './src/screens/view/ViewPasswordScreen'
+export { default as EditPasswordScreen } from './src/screens/management/EditPasswordScreen'
+
 
 

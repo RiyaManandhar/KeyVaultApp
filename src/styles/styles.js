@@ -74,6 +74,8 @@ export default StyleSheet.create({
           borderRadius: 30,
           marginTop: 5,
           marginBottom:5,
+          color: 'black',
+          overflow: 'hidden',
         },
 
 //ForgotPassword
@@ -117,7 +119,7 @@ export default StyleSheet.create({
           margin: 20,
           width: "90%",
         },
-        textEncry: {
+        text: {
           fontSize: 18,
           margin:5,
         },
@@ -220,10 +222,9 @@ export default StyleSheet.create({
 
 //AddPassword Screen
         adds:{
-          margin:'10%',
+          marginTop:'10%',
           width:'95%',
           alignItems:'center',
-          marginBottom:10,
         },
         picker:{
           marginVertical: 30,
@@ -247,5 +248,25 @@ export default StyleSheet.create({
           maxHeight:'20%',
           
         },
+
+//View Password Screen
+        titleText:{
+          fontSize: 18,
+          textAlign: "center",
+          flex: 1,
+          fontWeight: "bold",
+          margin:5,
+        },
+        textAreaContainer: {
+          paddingHorizontal: 12,
+        },
+        textArea:{
+          textAlignVertical: "top",
+          height: 120,
+          justifyContent: "flex-start",
+          maxHeight: 60,
+        },
+
+
 
 });

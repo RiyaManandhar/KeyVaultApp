@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { LoginScreen, RegistrationController,ForgotPasswordScreen,CreateEncryptionKey, 
+import { LoginScreen, RegistrationController,ForgotPasswordScreen,GenerateScreen,
+  CreateEncryptionKey, ViewPasswordScreen,HomeScreen,AddPasswordScreen,EditPasswordScreen
 } from '../../index'
 import DrawerNavigators from './DrawerNavigators';
 
@@ -16,10 +17,21 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
 
 {user ? (
           <>
-              {/* if the user is signed in */}
+              {/* if the user is signed in 
               <Stack.Screen name="Drawer" options={{ headerShown: false}}>
                   {props => <DrawerNavigators {...props} extraData={user}/>}
-              </Stack.Screen>
+              </Stack.Screen>*/}
+              <Stack.Screen name="Passwords">
+                        {props => <HomeScreen {...props} extraData={user} options={{}}/>}
+                    </Stack.Screen>
+              <Stack.Screen name="AddPasswordScreen" component={AddPasswordScreen}
+                                  options={{title: 'Add Password Entry'}}/>
+              <Stack.Screen name="ViewPasswordScreen" component={ViewPasswordScreen}/>
+              <Stack.Screen name="EditPasswordScreen" component={EditPasswordScreen}
+                                  options={{title: 'Edit Password Details'}}/>
+              <Stack.Screen name="GenerateScreen" component={GenerateScreen}
+                                  options={{title: 'Password Options'}}/>
+                    
               
           </>
 

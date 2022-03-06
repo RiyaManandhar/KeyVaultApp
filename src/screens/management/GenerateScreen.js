@@ -62,7 +62,8 @@ export default function GenerateScreen(props) {
             // navigate back to the previous screen we passed in as a parameter earlier
             // I was using goBack for this earlier but it appeared to have some unexpected behaviour
             // So im using this in place
-            props.navigation.navigate(previousScreen);
+           // props.navigation.navigate(previousScreen);
+           props.navigation.goBack('previousScreen');
         } else {
             // Show an error and stay on this page if no character sets are selected
             Alert.alert(
