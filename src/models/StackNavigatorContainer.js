@@ -17,11 +17,11 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
 
 {user ? (
           <>
-              {/* if the user is signed in 
+              {/* if the user is signed in */}
               <Stack.Screen name="Drawer" options={{ headerShown: false}}>
                   {props => <DrawerNavigators {...props} extraData={user}/>}
-              </Stack.Screen>*/}
-              <Stack.Screen name="Passwords">
+              </Stack.Screen>
+             {/* <Stack.Screen name="Passwords">
                         {props => <HomeScreen {...props} extraData={user} options={{}}/>}
                     </Stack.Screen>
               <Stack.Screen name="AddPasswordScreen" component={AddPasswordScreen}
@@ -30,7 +30,7 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
               <Stack.Screen name="EditPasswordScreen" component={EditPasswordScreen}
                                   options={{title: 'Edit Password Details'}}/>
               <Stack.Screen name="GenerateScreen" component={GenerateScreen}
-                                  options={{title: 'Password Options'}}/>
+                                  options={{title: 'Password Options'}}/>*/}
                     
               
           </>

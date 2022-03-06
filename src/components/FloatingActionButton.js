@@ -20,9 +20,9 @@ export function FloatingActionButton({props, userIdentifier}) {
              placement="right"
              title="ADD"
              color="#72C99A"          
-            // onPress={() => props.navigation.navigate('Root', 
-             //{screen: 'AddPasswordScreen', params:{userId: userIdentifier},})}
-             onPress={() => props.navigation.navigate('AddPasswordScreen', {userId: userIdentifier})}
+             onPress={() => props.navigation.navigate('Root', 
+             {screen: 'AddPasswordScreen', params:{userId: userIdentifier},})}
+            // onPress={() => props.navigation.navigate('AddPasswordScreen', {userId: userIdentifier})}
         />
     );
 }

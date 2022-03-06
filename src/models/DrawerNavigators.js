@@ -7,7 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import CustomDrawer from '../components/CustomDrawer';
 
-import { HomeScreen,ProfileScreen,SettingsScreen,AddPasswordScreen,GenerateScreen
+import { HomeScreen,ProfileScreen,SettingsScreen,AddPasswordScreen,GenerateScreen,
+  ViewPasswordScreen,EditPasswordScreen
 } from "../../index";
 
 
@@ -22,9 +23,12 @@ function Root() {
       headerTintColor: '#fff',
       headerTitleStyle: {fontWeight: 'bold',},
     }}>
+                        
       <AppStack.Screen name="AddPasswordScreen" component={AddPasswordScreen} 
                       options={{title: 'Add Password Entry'}}/>
-     
+     <AppStack.Screen name="ViewPasswordScreen" component={ViewPasswordScreen}/>
+     <AppStack.Screen name="EditPasswordScreen" component={EditPasswordScreen}
+                                  options={{title: 'Edit Password Details'}}/>
       <AppStack.Screen name="GenerateScreen" component={GenerateScreen}
                                   options={{title: 'Password Options'}}/>
      
