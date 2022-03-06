@@ -152,7 +152,7 @@ export default function ViewPasswordScreen(props) {
     const onDeleteButtonPress = () => {
         // Item is deleted from the Firestore passwords collection, with the navigation stack then returned to the home screen
         firebase.firestore().collection('users/' + userID + '/passwords').doc(id).delete().then(() => {
-            props.navigation.goBack('HomeScreen');
+            props.navigation.goBack('Passwords');
         }).catch(() => {
         });
     }
