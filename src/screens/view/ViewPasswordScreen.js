@@ -5,7 +5,7 @@ import {firebase} from '../../config/FirebaseConfig'
 import CryptoES from "crypto-es";
 import {OptionsMenuView} from "../../components/OptionsMenuView";
 
-import styles from '../../Styles/styles';
+import styles from '../../style/styles';
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import {ClickableButton} from "../../components/ClickableButton";
 import { TextBoxInput } from '../../components/TextBoxInput';

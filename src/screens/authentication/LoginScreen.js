@@ -3,7 +3,7 @@ import {Alert,Text, Image,TouchableOpacity,ImageBackground,View,KeyboardAvoiding
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
 import {AuthContext} from "../../contexts/AuthContext";
-import styles from "../../Styles/styles";
+import styles from "../../style/styles";
 import {firebase} from '../../config/FirebaseConfig'
 import * as LocalAuthentication from 'expo-local-authentication';
 

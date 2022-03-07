@@ -3,7 +3,7 @@ import {Alert, View,ImageBackground,Text,Image,KeyboardAvoidingView} from 'react
 import {firebase} from "../../config/FirebaseConfig";
 import {ClickableButton} from "../../components/ClickableButton";
 import { TextBoxInput } from '../../components/TextBoxInput';
-import styles from '../../Styles/styles';
+import styles from '../../style/styles';
 
 /**
  * Forgot Password Screen

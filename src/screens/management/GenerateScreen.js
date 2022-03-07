@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import {View, Text, Alert} from 'react-native'
 import SettingsContext from '../../contexts/SettingsContext';
 import {ClickableButton} from "../../components/ClickableButton";
-import styles from "../../Styles/styles";
+import styles from "../../style/styles";
 import {ToggleSwitch} from "../../components/ToggleSwitch";
 import {LengthSlider} from "../../components/LengthSlider";
 

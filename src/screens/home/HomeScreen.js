@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {FlatList, TextInput, Button,View, SafeAreaView, Platform, Text} from 'react-native'
-import styles from '../../Styles/styles';
+import styles from '../../style/styles';
 import {firebase} from '../../config/FirebaseConfig'
 import CryptoES from "crypto-es";
 
@@ -27,7 +27,7 @@ export default function HomeScreen(props) {
     const [entities, setEntities] = useState([])
 
     // Firebase authentication and database information
-//const userID = props.extraInfos.id
+   // const userID = props.extraInfos.id
    const userID =props.extraData.id
     const entityRef = firebase.firestore().collection('users/' + userID + '/passwords')
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {TextInput,View} from "react-native";
-import styles from "../Styles/styles";
+import styles from "../style/styles";
 
 /**
  * Cumulative component for input text password box.

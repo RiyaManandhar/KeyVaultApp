@@ -5,7 +5,7 @@ import SettingsContext from '../../contexts/SettingsContext';
 import CryptoES from "crypto-es";
 import PasswordGeneration from "../../models/PasswordGeneration";
 
-import styles from '../../Styles/styles';
+import styles from '../../style/styles';
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import {TextBoxInput} from "../../components/TextBoxInput";
 import {Picker} from "@react-native-picker/picker";

@@ -3,7 +3,7 @@ import {Text, View, Image, TextInput,TouchableOpacity,ImageBackground,KeyboardAv
 import { ClickableButton } from '../../components/ClickableButton';
 import { TextBoxInput } from '../../components/TextBoxInput';
 import { TextBoxPassword } from '../../components/TextBoxPassword';
-import styles from "../../Styles/styles"
+import styles from "../../style/styles"
 
 
 export function RegistrationScreen({setFullName, fullName, setEmail, email, setPassword, password, setConfirmPassword, confirmPassword, onRegisterPress, onFooterLinkPress}){

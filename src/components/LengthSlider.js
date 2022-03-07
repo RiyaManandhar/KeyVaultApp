@@ -1,6 +1,6 @@
 import React from "react";
 import {View} from "react-native";
-import styles from "../Styles/styles";
+import styles from "../style/styles";
 
 import Slider from "@react-native-community/slider";
 

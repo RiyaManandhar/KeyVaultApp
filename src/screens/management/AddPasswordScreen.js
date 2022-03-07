@@ -1,7 +1,7 @@
 import React from 'react'
 import {View,Text} from "react-native";
 
-import styles from '../../Styles/styles';
+import styles from '../../style/styles';
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import {TextBoxInput} from "../../components/TextBoxInput";
 import {Picker} from "@react-native-picker/picker";

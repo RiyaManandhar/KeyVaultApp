@@ -1,7 +1,7 @@
 import React from "react";
-import {View, Text, TouchableOpacity, StyleSheet} from "react-native";
+import {View, Text, TouchableOpacity} from "react-native";
 import {Circle} from 'react-native-shape';
-import styles from "../Styles/styles";
+import styles from "../style/styles";
 
 /**
  * Entity View for showing Password Entries on the Home Screen.

@@ -1,6 +1,6 @@
 import React from "react";
 import {Switch, Text, View} from 'react-native'
-import styles from "../Styles/styles";
+import styles from "../style/styles";
 
 /**
  * Cumulative Method for a toggle switch with descriptive text next to it
