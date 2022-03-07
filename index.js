@@ -11,7 +11,6 @@ export { default as CreateEncryptionKey } from './src/screens/authentication/Enc
 // Home Screen
 export { default as HomeScreen } from './src/screens/home/HomeScreen'
 export { default as SettingsScreen } from './src/screens/home/SettingsScreen'
-//export { default as DrawerNavigators } from './src/models/DrawerNavigators'
 export { default as ProfileScreen } from './src/screens/home/ProfileScreen'
 
 //management

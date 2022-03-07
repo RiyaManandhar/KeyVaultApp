@@ -27,8 +27,8 @@ export default function HomeScreen(props) {
     const [entities, setEntities] = useState([])
 
     // Firebase authentication and database information
-   const userID = props.extraInfos.id
-   //const userID =props.extraData.id
+//const userID = props.extraInfos.id
+   const userID =props.extraData.id
     const entityRef = firebase.firestore().collection('users/' + userID + '/passwords')
 
     // Decryption Key
