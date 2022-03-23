@@ -18,10 +18,10 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function Root({extraDatas,signOut}) {
+function Root({extraDatas,onSignout}) {
   return (
     <Drawer.Navigator independent="true"
-    drawerContent={props => <CustomDrawer {...props} onSignOut={signOut}/>}
+    drawerContent={props => <CustomDrawer {...props} onSignOut={onSignout}/>}
     screenOptions={{
       headerShown: true,
       drawerActiveBackgroundColor: '#8ad2a6',
@@ -77,7 +77,7 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
               {/* if the user is signed in*/}
               <Stack.Screen name="Root"  options={{
           headerShown : false,}}>
-                {props => <Root {...props} extraDatas={user} options={{}}/>}
+                {props => <Root {...props} extraDatas={user} onSignout={signOut} options={{}}/>}
                 </Stack.Screen>
              <Stack.Screen name="Passwords">
                         {props => <HomeScreen {...props} extraData={user} options={{}}/>}
