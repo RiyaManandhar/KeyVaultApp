@@ -149,7 +149,7 @@ export default function EditPasswordScreen(props) {
 
                 {/* Buttons */}
                 <ClickableButton buttonText={"Auto Generate Password"} onPressMethod={handleGeneratePassword}/>
-                <ClickableButton buttonText={"Settings"} onPressMethod={onGenerateButtonPress}/>
+                <ClickableButton buttonText={"Password Generator"} onPressMethod={onGenerateButtonPress}/>
                 <ClickableButton buttonText={"Update"} onPressMethod={onAddButtonPress}/>
                 </View>
         
