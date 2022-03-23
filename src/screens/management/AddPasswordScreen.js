@@ -66,7 +66,7 @@ export function AddPasswordScreen({
 
             {/* Buttons */}
             <ClickableButton buttonText={"Auto Generate Password"} onPressMethod={handleGeneratePassword}/>
-            <ClickableButton buttonText={"Settings"} onPressMethod={onGenerateButtonPress}/>
+            <ClickableButton buttonText={"Password Generator"} onPressMethod={onGenerateButtonPress}/>
             <ClickableButton buttonText={"Add"} onPressMethod={onAddButtonPress}/>
         </View>
     </KeyboardAwareScrollView>

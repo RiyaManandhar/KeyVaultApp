@@ -106,7 +106,7 @@ export default function App() {
           /**
            * Sign out.
            * Signs the current user out of firebase, then nullifies the user state.
-           * This is activated from a button in the settings screen.
+           * This is activated from a button in the Custom Drawer(SignOut).
            */
           signOut: () => {
               firebase
