@@ -147,13 +147,13 @@ const LoginScreen = (props) => {
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
 
-                {/* Fingerprint */}
+                {/* Fingerprint 
               <TouchableOpacity style={styles.finger} onPress={() => handleBiometrics()}>
               <Image  source={require('../../assets/Images/fingerprint.png')} style={styles.fingerprintImage} />
                 <Text style={styles.tapFingerText} enabled={biometricsEnabled}>
                  Tap to Login with fingerprint
                   </Text>
-              </TouchableOpacity>
+              </TouchableOpacity>*/}
                 
 
                 {/* Create new account button */} 
