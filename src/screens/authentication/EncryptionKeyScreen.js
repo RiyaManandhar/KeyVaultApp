@@ -25,7 +25,6 @@ export function EncryptionKeyScreen({   setPassphrase,
                                     }) {
     return (
         <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.containerEncryption}
       >
            {/* Background  Image*/}

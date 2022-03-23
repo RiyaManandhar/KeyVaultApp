@@ -8,6 +8,8 @@ export default StyleSheet.create({
         container:{ 
           flex: 1,
           alignItems: 'center',
+          
+
         },
         bgImgStyle: {
           height: '100%',
@@ -18,7 +20,7 @@ export default StyleSheet.create({
         logo:{
           height: '21%', 
           width: '50%',
-          margin:'10%',
+          margin:'5%',
           resizeMode: 'contain',
         },
         
@@ -106,7 +108,7 @@ export default StyleSheet.create({
         containerEncryption:{
           flex: 1,
           alignItems: 'center',
-          marginTop:'-50%',
+          marginTop:'-40%',
         },
         encrypBox:{
           borderColor: 'black',
@@ -116,8 +118,9 @@ export default StyleSheet.create({
           alignItems: "center",
           paddingTop:15,
           paddingBottom:15,
-          margin: 20,
+          margin: '5%',
           width: "90%",
+         // marginTop:'5%',
         },
         text: {
           fontSize: 18,
