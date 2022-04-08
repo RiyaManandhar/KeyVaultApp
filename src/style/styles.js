@@ -229,9 +229,6 @@ export default StyleSheet.create({
           marginVertical: 30,
           width: 300,
           padding: 10,
-          borderWidth: 1,
-          borderColor: "red",
-         
         },
         pick:{
           fontSize:18,
