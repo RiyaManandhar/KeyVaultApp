@@ -14,6 +14,7 @@ import CustomDrawer from '../components/CustomDrawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -98,6 +99,7 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
         ) : (
           <>
               {/* if the user is not signed in */}
+              <Stack.Screen options={{ headerShown: false }} name="OnboardingScreen" component={OnboardingScreen} />
               <Stack.Screen name="Login" options={{ headerShown: false}}>
                   {props => <LoginScreen {...props} executeBiometrics={biometricAuth}/>}
                 </Stack.Screen>
