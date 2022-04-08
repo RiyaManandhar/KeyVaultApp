@@ -82,10 +82,11 @@ export default StyleSheet.create({
 
 //ForgotPassword
         forgotImage:{
-          height: '25%', 
-          width: '50%',
-          margin:'10%',
-          marginTop:'-50%',
+          marginTop:'-45%',
+          height: '40%', 
+          width: '60%',
+          margin:'5%',
+          resizeMode: 'contain',
         },
         forgotBox:{
           borderColor: 'black',
@@ -93,15 +94,10 @@ export default StyleSheet.create({
           borderWidth:3,
           justifyContent: "center",
           alignItems: "center",
-          paddingTop:15,
-          paddingBottom:40,
-          margin: 10,
+          paddingTop:5,
+          paddingBottom:15,
+          margin:'5%',
           width: "90%",
-        },
-        forgotText:{
-          fontSize:30,
-          fontWeight:'bold',
-          margin:10,
         },
 
 //EncryptionKeyScreen.js
