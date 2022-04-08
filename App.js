@@ -125,32 +125,32 @@ export default function App() {
            * Data is passed through to the encryption key setup screen. Once complete, this function is then executed
            * using all data inherited through the frames.
            */
-          signUp: async data => {
-              firebase
-                  .auth()
-                  // Create Firebase Authentication entry
-                  .createUserWithEmailAndPassword(data.email, data.password)
-                  .then((response) => {
-                      const uid = response.user.uid
-                      // Create supplementary user database
-                      const userData = {
-                          id: uid,
-                          email: data.email,
-                          fullName: data.fullName,
-                          passphrase: data.passphrase,
-                      };
-                      const usersRef = firebase.firestore().collection('users')
-                      usersRef.doc(uid).set(userData).then(() => {
-                          // Set user context
-                          setUser(userData)
-                      }).catch((error) => {
-                          // Show error on failure
-                          alert(error)
-                      });
-                  }).catch((error) => {
-                  // Show error on failure
-                  alert(error)
-              });
+           signUp: async data => {
+            firebase
+                .auth()
+                // Create Firebase Authentication entry
+                .createUserWithEmailAndPassword(data.email, data.password)
+                .then((response) => {
+                    const uid = response.user.uid
+                    // Create supplementary user database
+                    const userData = {
+                        id: uid,
+                        email: data.email,
+                        fullName: data.fullName,
+                        passphrase: data.passphrase,
+                    };
+                    const usersRef = firebase.firestore().collection('users')
+                    usersRef.doc(uid).set(userData).then(() => {
+                        // Set user context
+                        setUser(userData)
+                    }).catch((error) => {
+                        // Show error on failure
+                        alert(error)
+                    });
+                }).catch((error) => {
+                // Show error on failure
+                alert(error)
+            });
           },
       }),
       []
