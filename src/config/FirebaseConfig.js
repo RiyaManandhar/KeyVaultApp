@@ -5,12 +5,12 @@ import 'firebase/compat/firestore';
 //Configure these values and rename this file to FirebaseConfig.js
 //Add own firebase file's values below
 const firebaseConfig = {
-    apiKey: "AIzaSyBcf-LwZflx4XoMJcpL2vvcFb85ZZMR-Ho",
-    authDomain: "keyvault-f17d6.firebaseapp.com",
-    projectId: "keyvault-f17d6",
-    storageBucket: "keyvault-f17d6.appspot.com",
-    messagingSenderId: "104306584672",
-    appId: "1:104306584672:web:a5e200ea2ca223c552a705"
+  apiKey: "AIzaSyA0jqMvrzUCxsKh8N4fjJ84x0H-bqQiMAs",
+  authDomain: "keyvault-abdf6.firebaseapp.com",
+  projectId: "keyvault-abdf6",
+  storageBucket: "keyvault-abdf6.appspot.com",
+  messagingSenderId: "49143090678",
+  appId: "1:49143090678:web:5244fe9b2ecaafda604bd7"
 };
 
 if (!firebase.apps.length) {
