@@ -5,7 +5,7 @@ import { LoginScreen, RegistrationController,ForgotPasswordScreen,
   CreateEncryptionKey, 
   ViewPasswordScreen,
   AddPasswordScreen,
-  EditPasswordScreen,
+  EditPasswordScreen,EditProfileScreen,
   HomeScreen,
   ProfileScreen,
   SettingsScreen,
@@ -46,15 +46,14 @@ function Root({extraDatas,onSignout}) {
           ),}}> 
                 {props => <HomeScreen {...props} extraData={extraDatas}/>}
            </Drawer.Screen>
-     <Drawer.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          drawerIcon: ({color}) => (
+
+           <Drawer.Screen name="Profile" options={{drawerLabel:'Profile', drawerIcon: ({color}) => (
             <Ionicons name="person-outline" size={22} color={color} />
-          ),
-        }}
-      />
+          ),}}> 
+                {props => <ProfileScreen {...props} extraData={extraDatas}/>}
+           </Drawer.Screen>
+
+    
       <Drawer.Screen
         name="Settings"
         component={SettingsScreen}
@@ -122,7 +121,8 @@ export function StackNavigatorContainer({user,signOut, biometricAuth}) {
                                   options={{title: 'Edit Password Details'}}/>
               <Stack.Screen name="GenerateScreen" component={GenerateScreen}
                                   options={{title: 'Password Options'}}/>
-              
+                <Stack.Screen name="EditProfileScreen" component={EditProfileScreen}
+                                  options={{title: 'Edit Profile'}}/>
 
                     
               

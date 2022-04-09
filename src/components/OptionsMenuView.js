@@ -32,7 +32,7 @@ export function OptionsMenuView({copyUsername,copyEmail, copyPassword, onEditBut
                 customButton={<Ionicons name="ellipsis-horizontal" size={24} color="white"/>
                 }
                 destructiveIndex={3}
-                options={["Copy Username","Copy Email", "Copy Password", "Edit", "Delete", "Cancel"]}
+                options={["Copy Site Name","Copy Email", "Copy Password", "Edit", "Delete", "Cancel"]}
                 actions={[copyUsername,copyEmail, copyPassword, onEditButtonPress, showConfirmDialog, exit]}
             />
         );
@@ -42,7 +42,7 @@ export function OptionsMenuView({copyUsername,copyEmail, copyPassword, onEditBut
             <OptionsMenu
                 customButton={<Ionicons name="ellipsis-vertical" size={24} color="white"/>
                 }
-                options={["Copy Username","Copy Email", "Copy Password", "Edit", "Delete"]}
+                options={["Copy Site Name","Copy Email", "Copy Password", "Edit", "Delete"]}
                 actions={[copyUsername,copyEmail, copyPassword, onEditButtonPress, showConfirmDialog]}
             />
         )

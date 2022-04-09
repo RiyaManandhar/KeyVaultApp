@@ -12,6 +12,7 @@ export { default as CreateEncryptionKey } from './src/screens/authentication/Enc
 export { default as HomeScreen } from './src/screens/home/HomeScreen'
 export { default as SettingsScreen } from './src/screens/home/SettingsScreen'
 export { default as ProfileScreen } from './src/screens/home/ProfileScreen'
+export { default as EditProfileScreen } from './src/screens/home/EditProfileScreen'
 
 //management
 export { default as AddPasswordScreen } from './src/screens/management/AddPasswordController'

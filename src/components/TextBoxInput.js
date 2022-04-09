@@ -12,7 +12,7 @@ import styles from "../style/styles";
 
 export function TextBoxInput({placeholder,textSetter, value}){
     return (
-       <View style={styles.inputView}>
+      <View style={styles.inputView}>
         <TextInput
             style={styles.textInput}
             placeholderTextColor="black"

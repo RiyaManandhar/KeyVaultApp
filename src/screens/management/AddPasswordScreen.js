@@ -12,8 +12,8 @@ import {ClickableButton} from "../../components/ClickableButton";
  * Add Password Screen
  * @param setPasswordEntryName entry name setter
  * @param passwordEntryName entry name
- * @param setUsernameText username setter
- * @param usernameText username
+ * @param setemailText username setter
+ * @param emailText username
  * @param setPasswordText password setter
  * @param passwordText password
  * @param selectedColour colour
@@ -26,8 +26,8 @@ import {ClickableButton} from "../../components/ClickableButton";
 export function AddPasswordScreen({
                                      setPasswordEntryName,
                                      passwordEntryName,
-                                     setUsernameText,
-                                     usernameText,
+                                     setemailText,
+                                     emailText,
                                      setPasswordText,
                                      passwordText,
                                      selectedColour,
@@ -41,8 +41,8 @@ export function AddPasswordScreen({
         <View style={styles.container}>
            <View style={styles.adds}>
             {/* Entity Text Input Fields */}
-            <TextBoxInput placeholder={'Name'} textSetter={setPasswordEntryName} value={passwordEntryName}/>
-            <TextBoxInput placeholder={'Username / Email'} textSetter={setUsernameText} value={usernameText}/>
+            <TextBoxInput placeholder={'Site Name'} textSetter={setPasswordEntryName} value={passwordEntryName}/>
+            <TextBoxInput placeholder={'Email'} textSetter={setemailText} value={emailText}/>
             <TextBoxInput placeholder={'Password'} textSetter={setPasswordText} value={passwordText}/>
             </View>
             <View style={{margin:10}}>

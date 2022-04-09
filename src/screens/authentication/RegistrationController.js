@@ -17,6 +17,7 @@ export default function RegistrationController(props) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
+
     /**
      * Navigate back to the login screen if the footer link is pressed
      */
@@ -59,6 +60,9 @@ export default function RegistrationController(props) {
             return;
         }
 
+      
+
+
         // Check the two password fields are equal
         if ((password !== confirmPassword)) {
             Alert.alert(
@@ -73,6 +77,16 @@ export default function RegistrationController(props) {
             );
             return;
         }
+        const uppercaseRegExp   = /(?=.*?[A-Z])/;
+        const lowercaseRegExp   = /(?=.*?[a-z])/;
+        const digitsRegExp      = /(?=.*?[0-9])/;
+        const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
+        const minLengthRegExp   = /.{8,}/;
+
+        const uppercasePassword =   uppercaseRegExp.test(password);
+        const lowercasePassword =   lowercaseRegExp.test(password);
+        const digitsPassword =      digitsRegExp.test(password);
+        const specialCharPassword = specialCharRegExp.test(password);
 
         // Check that the password length is at least 8 characters long
         if (password.length < 8) {
@@ -87,7 +101,57 @@ export default function RegistrationController(props) {
                 ]
             );
             return;
+        }else if(!uppercasePassword)
+        {
+            Alert.alert(
+                "Password should have at least one Uppercase",
+                "Please enter a password that has at least 1 Uppercase character.",
+                [
+                    {
+                        text: "Return",
+                        style: "cancel",
+                    },
+                ]
+            );
+            return;
+        }else if(!lowercasePassword){
+            Alert.alert(
+                "Password should have at least one Lowercase",
+                "Please enter a password that has at least 1 Lowercase character.",
+                [
+                    {
+                        text: "Return",
+                        style: "cancel",
+                    },
+                ]
+            );
+            return;
+        }else if(!digitsPassword){
+            Alert.alert(
+                "Password should have at least one Number",
+                "Please enter a password that has at least 1 Number.",
+                [
+                    {
+                        text: "Return",
+                        style: "cancel",
+                    },
+                ]
+            );
+            return;
+        }else if(!specialCharPassword){
+            Alert.alert(
+                "Password should have at least one Special Character",
+                "Please enter a password that has at least 1 Special Character.",
+                [
+                    {
+                        text: "Return",
+                        style: "cancel",
+                    },
+                ]
+            );
+            return;
         }
+
 
         // If all checks have been validated and succeed, then navigate to the encryption key setup
         // Full Name, Email and password details are passed through to this next screen which are later submitted to Firebase.

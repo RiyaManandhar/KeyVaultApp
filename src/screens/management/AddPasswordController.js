@@ -14,7 +14,7 @@ import { AddPasswordScreen } from './AddPasswordScreen';
 export default function AddPasswordController(props) {
       // States to store entity information
       const [passwordEntryName, setPasswordEntryName] = useState('')
-      const [usernameText, setUsernameText] = useState('')
+      const [emailText, setemailText] = useState('')
       const [passwordText, setPasswordText] = useState('')
       const [selectedColour, setSelectedColour] = useState("#002366");
   
@@ -60,15 +60,15 @@ export default function AddPasswordController(props) {
        * When the add button is pressed, then encrypt the information and update the firebase database
        */
       const onAddButtonPress = () => {
-          if (passwordEntryName.length > 0 && usernameText.length > 0 && passwordText.length > 0) {
+          if (passwordEntryName.length > 0 && emailText.length > 0 && passwordText.length > 0) {
               // encrypt username and password text using the encryption/decryption key we passed in on initial load
               let encryptedPasswordText = CryptoES.AES.encrypt(passwordText, passphrase);
-              let encryptedUsernameText = CryptoES.AES.encrypt(usernameText, passphrase);
+              let encryptedemailText = CryptoES.AES.encrypt(emailText, passphrase);
               // Create data structure containing all information to be updated
               const data = {
                   name: passwordEntryName,
                   password: encryptedPasswordText.toString(),
-                  userEmail: encryptedUsernameText.toString(),
+                  userEmail: encryptedemailText.toString(),
                   accent: selectedColour,
                   creationDate: firebase.firestore.FieldValue.serverTimestamp(),
                   modificationDate: firebase.firestore.FieldValue.serverTimestamp(),
@@ -112,8 +112,8 @@ export default function AddPasswordController(props) {
     return (
         <AddPasswordScreen setPasswordEntryName={setPasswordEntryName}
                            passwordEntryName={passwordEntryName}
-                           setUsernameText={setUsernameText}
-                           usernameText={usernameText}
+                           setemailText={setemailText}
+                           emailText={emailText}
                            setPasswordText={setPasswordText}
                            passwordText={passwordText}
                            selectedColour={selectedColour}

@@ -19,7 +19,7 @@ import {ClickableButton} from "../../components/ClickableButton";
 export default function EditPasswordScreen(props) {
     // States to store entity information
     const [passwordEntryName, setPasswordEntryName] = useState('')
-    const [usernameText, setUsernameText] = useState('')
+    const [emailText, setemailText] = useState('')
     const [passwordText, setPasswordText] = useState('')
     const [selectedColour, setSelectedColour] = useState("#002366");
     const [passphrase, setPassphrase] = useState('');
@@ -49,11 +49,11 @@ export default function EditPasswordScreen(props) {
             let data = snapshot.data()
             // decrypt username/email address and password text
             let decryptedPasswordText = CryptoES.AES.decrypt(data.password, pPhrase);
-            let decryptedUsernameText = CryptoES.AES.decrypt(data.userEmail, pPhrase);
+            let decryptedemailText = CryptoES.AES.decrypt(data.userEmail, pPhrase);
             // Set entry name
             setPasswordEntryName(data.name)
             // Set username/email address and password to the decrypted text
-            setUsernameText(decryptedUsernameText.toString(CryptoES.enc.Utf8))
+            setemailText(decryptedemailText.toString(CryptoES.enc.Utf8))
             setPasswordText(decryptedPasswordText.toString(CryptoES.enc.Utf8))
             // Set accent colour in the colour picker
             setSelectedColour(data.accent)
@@ -79,15 +79,15 @@ export default function EditPasswordScreen(props) {
      * When the add button is pressed, then encrypt the information and update the firebase database
      */
     const onAddButtonPress = () => {
-        if (passwordEntryName.length > 0 && usernameText.length > 0 && passwordText.length > 0) {
+        if (passwordEntryName.length > 0 && emailText.length > 0 && passwordText.length > 0) {
             // encrypt username and password text using the encryption/decryption key we passed in on initial load
             let encryptedPasswordText = CryptoES.AES.encrypt(passwordText, passphrase);
-            let encryptedUsernameText = CryptoES.AES.encrypt(usernameText, passphrase);
+            let encryptedemailText = CryptoES.AES.encrypt(emailText, passphrase);
 
             // Individually update values in order to minimise the chance of issues happening when updating the database
             let db = firebase.firestore();
             db.collection('users/' + userID + '/passwords').doc(entityID).update({name: passwordEntryName});
-            db.collection('users/' + userID + '/passwords').doc(entityID).update({userEmail: encryptedUsernameText.toString()});
+            db.collection('users/' + userID + '/passwords').doc(entityID).update({userEmail: encryptedemailText.toString()});
             db.collection('users/' + userID + '/passwords').doc(entityID).update({password: encryptedPasswordText.toString()});
             db.collection('users/' + userID + '/passwords').doc(entityID).update({accent: selectedColour});
             db.collection('users/' + userID + '/passwords').doc(entityID).update({modificationDate: firebase.firestore.FieldValue.serverTimestamp()});
@@ -128,8 +128,8 @@ export default function EditPasswordScreen(props) {
             keyboardShouldPersistTaps="always">
                 <View style={{flex: 1, alignItems:'center',marginTop:30}}>
                 {/* Entity Text Input Fields */}
-                <TextBoxInput placeholder={'Name'} textSetter={setPasswordEntryName} value={passwordEntryName}/>
-                <TextBoxInput placeholder={'Username / Email'} textSetter={setUsernameText} value={usernameText}/>
+                <TextBoxInput placeholder={'Site Name'} textSetter={setPasswordEntryName} value={passwordEntryName}/>
+                <TextBoxInput placeholder={'Email'} textSetter={setemailText} value={emailText}/>
                 <TextBoxInput placeholder={'Password'} textSetter={setPasswordText} value={passwordText}/>
 
                 <View style={{margin:10}}>

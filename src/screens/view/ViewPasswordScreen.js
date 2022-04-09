@@ -110,12 +110,12 @@ export default function ViewPasswordScreen(props) {
             let data = snapshot.data()
             // Decrypt Username/Email Address and Password
             let decryptedPasswordText = CryptoES.AES.decrypt(data.password, passphrase);
-            let decryptedUsernameText = CryptoES.AES.decrypt(data.userEmail, passphrase);
+            let decryptedemailText = CryptoES.AES.decrypt(data.userEmail, passphrase);
             // Set unencrypted entity plaintext information
             setEntityName(data.name);
             setNotesText(data.notes);
             // Set decrypted username/email address and password strings
-            setEntityUserEmail(decryptedUsernameText.toString(CryptoES.enc.Utf8));
+            setEntityUserEmail(decryptedemailText.toString(CryptoES.enc.Utf8));
             setEntityPassword(decryptedPasswordText.toString(CryptoES.enc.Utf8));
             // Set the password to be hidden using a secured text field
             setPasswordRevealed(false);
@@ -196,9 +196,9 @@ export default function ViewPasswordScreen(props) {
                 {/* Entity Information View Box */}
                 <View style={styles.encrypBox}>
                     <Text style={styles.titleText}>Account Details</Text>
-                    <Text style={styles.text}>Username</Text>
+                    <Text style={styles.text}>Site Name</Text>
                     
-                     {/* Username Text Box */}
+                     {/* Site Name Text Box */}
                      <TextBoxInput 
                             textSetter={setEntityName} 
                             value={entityName}
