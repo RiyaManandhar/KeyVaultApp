@@ -10,10 +10,11 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+
 const CustomDrawer = props => {
+
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView
@@ -23,17 +24,17 @@ const CustomDrawer = props => {
           source={require('../assets/Images/BgImage.jpg')}
           style={{padding: 20}}>
           <Image
-            source={require('../assets/Images/profile.png')}
-            style={{height: 180, width: 100, borderRadius: 40, marginBottom: 10}}
+            source={require('../assets/Images/logo.png')}
+            style={{height: 180, width: 200, borderRadius: 20, margin: 10,resizeMode:'contain',}}
           />
           <Text
             style={{
-              color: '#fff',
-              fontSize: 18,
+              color: 'black',
+              fontSize: 20,fontWeight:'bold',
               //fontFamily: 'Roboto-Medium',
               marginBottom: 5,
             }}>
-            RIYA MANANDHAR
+            {props.drawerData.fullName}
           </Text>
         </ImageBackground>
         <View style={{flex: 1, backgroundColor: '#fff', paddingTop: 10}}>
