@@ -8,7 +8,7 @@ import { LoginScreen, RegistrationController,ForgotPasswordScreen,
   EditPasswordScreen,EditProfileScreen,
   HomeScreen,
   ProfileScreen,
-  SettingsScreen,
+  //SettingsScreen,
 } from '../../index'
 import CustomDrawer from '../components/CustomDrawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -46,7 +46,7 @@ function Root({extraDatas,onSignout}) {
           ),}}> 
                 {props => <HomeScreen {...props} extraData={extraDatas}/>}
            </Drawer.Screen>
-
+{/* 
            <Drawer.Screen name="Profile" options={{drawerLabel:'Profile', drawerIcon: ({color}) => (
             <Ionicons name="person-outline" size={22} color={color} />
           ),}}> 
@@ -62,7 +62,7 @@ function Root({extraDatas,onSignout}) {
             <Ionicons name="settings-outline" size={22} color={color} />
           ),
         }}
-      />
+      />*/}
     </Drawer.Navigator>
   );
 }
