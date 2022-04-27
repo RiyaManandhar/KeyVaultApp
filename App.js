@@ -8,6 +8,7 @@ import {AuthContext} from './src/contexts/AuthContext'
 import AndroidTimerFix from "./src/util/AndroidTimerFix";
 
 /**
+ * Try(riyalivi@gmail.com---Password:Riya@1234)
  * Main Insertion Point for the Application.
  * This function is primarily used for user authentication and its relevant actions such as sign in, sign out.
  * As the navigation stack is oriented around authentication, its insertion point is also here
